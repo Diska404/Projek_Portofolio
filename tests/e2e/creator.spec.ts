@@ -12,7 +12,7 @@ for (const width of [390, 768, 1440, 1920]) {
         await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
       ).toBe(true);
       expect(await page.content()).not.toMatch(
-        /Proyek perkuliahan|college-work|Diska404|127\.0\.0\.1:3100|Profil pribadi/,
+        /Proyek perkuliahan|college-work|Diska404|RaizeiID|127\.0\.0\.1:3100|Profil pribadi/,
       );
       await mkdir("docs/evidence", { recursive: true });
       await page.screenshot({

@@ -39,7 +39,7 @@ export function publicProfile(audience: PortfolioAudience): PortfolioProfile {
       projects: communityProjects,
       socials: [
         { label: "YouTube", detail: "Tautan kanal menunggu pengaturan", href: null },
-        { label: "GitHub", detail: "RaizeiID", href: "https://github.com/RaizeiID" },
+        { label: "GitHub", detail: "Profil publik menunggu persetujuan", href: null },
       ],
     };
   }

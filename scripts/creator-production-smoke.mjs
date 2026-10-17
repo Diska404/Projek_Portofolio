@@ -34,7 +34,8 @@ for (const stream of [child.stdout, child.stderr])
     log = (log + chunk).slice(-4000);
   });
 const base = `http://127.0.0.1:${port}`;
-const forbidden = /college-work|Proyek perkuliahan|Profil pribadi|Diska404|127\.0\.0\.1:3100/;
+const forbidden =
+  /college-work|Proyek perkuliahan|Profil pribadi|Diska404|RaizeiID|127\.0\.0\.1:3100/;
 try {
   let ready = false;
   for (let i = 0; i < 60; i++) {
