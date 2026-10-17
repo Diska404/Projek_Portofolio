@@ -91,3 +91,10 @@ Local preview: http://127.0.0.1:3100/preview/overview . Start from repository ro
 Personal: Diska404 + RaizeiID, contributions/commits/active days, observed pushes and delivery evidence, WakaTime time versus GitHub language bytes. Creator: publishing frequency across videos/completed live/verified posts, audience period metrics, secondary community GitHub RaizeiID only. Analytics precede project cards. Interactive filters preserve unknown values until real adapters exist. Community posts await verified owner records; repository allowlists and channel configuration remain unset. The owner explicitly approved the RaizeiID public hyperlink, superseding CR001's previous unlinked default.
 
 Current checks: 28 unit/security + 18 Chromium E2E PASS; lint/format/types/both production builds and isolated production boundary checks PASS. Responsive evidence is local/ignored under docs/evidence. No database/auth/provider setup is claimed. T006/CR002 IN_REVIEW; T007/T008 TODO; full R0/R1 NO-GO.
+
+
+## CR003A activity-ledger review — 18 October 2026
+
+Review `http://127.0.0.1:3100/#journey` (project work + AI), `http://127.0.0.1:3101/#journey` (community + Steam), and `http://127.0.0.1:3100/preview/activity` (synthetic interval-union simulation, never persisted). Daily public summaries are owner-authorized; private content/exact session schedules/live presence are excluded. Real data remains unconnected and all cards unknown.
+
+44 unit/security and 25 E2E cases PASS; lint/format/types/both builds/production smoke PASS. Added AI, Steam and method review coverage at 390/768/1440/1920. Local screenshots are ignored; see ACTIVITY_LEDGER_PLAN.md for evidence, source audit, full file inventory and ordered CR003B–F implementation. This is R0 visual/accounting groundwork, not a completed recorder or connected social/Steam/AI service. T006/CR003A IN_REVIEW; T007/T008 TODO.

@@ -67,7 +67,12 @@ try {
   assert.doesNotMatch(await (await globalThis.fetch(base + "/access")).text(), forbidden);
   const selected = await (await globalThis.fetch(base + "/?audience=personal")).text();
   assert.doesNotMatch(selected, forbidden);
-  for (const route of ["/preview/overview", "/personal", "/dashboard/projects"])
+  for (const route of [
+    "/preview/overview",
+    "/preview/activity",
+    "/personal",
+    "/dashboard/projects",
+  ])
     assert.equal((await globalThis.fetch(base + route)).status, 404);
   for (const method of ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"])
     assert.equal((await globalThis.fetch(base + "/api/owner/projects", { method })).status, 401);

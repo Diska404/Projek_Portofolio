@@ -29,7 +29,7 @@ test("personal avatar shortcut opens creator with referrer suppression", async (
   await shortcut.click();
   await expect(page).toHaveURL(creator + "/");
   await expect(
-    page.getByRole("heading", { name: "GFL2 Bahasa Indonesia", exact: true }),
+    page.locator("#work").getByRole("heading", { name: "GFL2 Bahasa Indonesia", exact: true }),
   ).toBeVisible();
   await expect(page.getByRole("button", { name: "Kampus", exact: true })).toHaveCount(0);
   await page.getByRole("link", { name: /Ruang undangan/ }).click();

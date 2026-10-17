@@ -3,6 +3,7 @@ import "@devpulse/ui/tokens.css";
 import "../../../web/src/app/globals.css";
 import "../../../web/src/app/audience.css";
 import "../../../web/src/app/analytics.css";
+import "../../../web/src/app/activity-atlas.css";
 export const metadata: Metadata = {
   title: { default: "Raizei — Komunitas & karya · DevPulse", template: "%s · Raizei" },
   description:

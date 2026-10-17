@@ -3,6 +3,8 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import type { PortfolioProfile } from "../../../../packages/contracts/src/portfolio";
 import type { PublicAnalytics } from "../../../../packages/contracts/src/public-analytics";
+import type { LedgerPortfolio } from "../lib/ledger-content";
+import { ActivityAtlas } from "./activity-atlas";
 import { PublicAnalyticsSection } from "./public-analytics";
 import { Icon } from "./icons";
 import { Badge, ReviewBar } from "./shared";
@@ -10,11 +12,13 @@ import { Badge, ReviewBar } from "./shared";
 export function PublicPortfolio({
   profile,
   analytics,
+  ledger,
   showReview,
   creatorUrl,
 }: {
   profile: PortfolioProfile;
   analytics: PublicAnalytics;
+  ledger: LedgerPortfolio;
   showReview: boolean;
   creatorUrl?: string;
 }) {
@@ -81,7 +85,15 @@ export function PublicPortfolio({
               {(
                 [
                   ["#about", "Tentang", "code"],
-                  ["#statistics", creator ? "Aktivitas kanal" : "Engineering", "activity"],
+                  ...(creator
+                    ? ([
+                        ["#statistics", "Aktivitas kanal", "activity"],
+                        ["#journey", "Komunitas & game", "globe"],
+                      ] as const)
+                    : ([
+                        ["#journey", "Proses & AI", "activity"],
+                        ["#statistics", "GitHub & coding", "branch"],
+                      ] as const)),
                   ["#work", "Proyek", "folder"],
                   ["#social", "Temukan saya", "globe"],
                 ] as const
@@ -157,8 +169,8 @@ export function PublicPortfolio({
               </h1>
               <p>{profile.description}</p>
               <div className="hero-ctas">
-                <a href="#statistics" className="button button-primary">
-                  {creator ? "Lihat aktivitas kanal" : "Lihat aktivitas coding"}{" "}
+                <a href={creator ? "#statistics" : "#journey"} className="button button-primary">
+                  {creator ? "Lihat aktivitas kanal" : "Lihat proses berkarya"}{" "}
                   <Icon name="arrowRight" size={16} />
                 </a>
                 <a href="#work" className="text-link">
@@ -214,7 +226,9 @@ export function PublicPortfolio({
               </div>
             </div>
           </section>
+          {!creator && <ActivityAtlas content={ledger} showReview={showReview} />}
           <PublicAnalyticsSection content={analytics} />
+          {creator && <ActivityAtlas content={ledger} showReview={false} />}
           <section className="audience-work" id="work">
             <div className="audience-section-heading">
               <div>

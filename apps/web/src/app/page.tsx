@@ -1,3 +1,4 @@
+import { ledgerContent } from "@/lib/ledger-content";
 import { analyticsContent } from "@/lib/analytics-content";
 import { PublicPortfolio } from "@/components/public-portfolio";
 import { reviewEnabled } from "@devpulse/contracts";
@@ -10,6 +11,7 @@ export default function Home() {
       showReview={reviewEnabled(process.env)}
       profile={publicProfile("personal")}
       analytics={analyticsContent("personal")}
+      ledger={ledgerContent("personal")}
       creatorUrl={creatorUrl()}
     />
   );

@@ -63,3 +63,8 @@ Supabase authentication will be integrated once project/configuration are suppli
 Owner identity/biography/avatar, publishable projects, accounts/tokens, domain, hosting budget, Supabase project and final name remain unknown. They do not block a local labeled prototype. No secrets are requested for R0a. Review dark/green direction, density, public/private distinction, navigation and widget composition before T007/T008.
 
 Official framework references checked: https://nextjs.org/docs/app/getting-started/installation and https://nextjs.org/docs/app/api-reference/functions/redirect . Provider-specific API capabilities will be reverified when their adapter tasks begin.
+
+
+## CR003 scope extension — 18 October 2026
+
+Owner requested actual project activity independent of publication, automatic + manual source provenance, AI experience across cloud/local models, community contributions and Steam playtime. CR003A delivers tested accounting contracts and local public/prototype review only. The remaining tasks do not bypass original gates: CR003B durable private journal depends on database/auth/project approval/metric schema; CR003C connects GitHub/WakaTime; CR003D–E add AI experience and community/Steam after approved snapshots/MVP; CR003F local collectors remain P2 after device/ingest prerequisites. See ACTIVITY_LEDGER_PLAN.md for scope, acceptance and current evidence. T006 remains IN_REVIEW, T007/T008 TODO.

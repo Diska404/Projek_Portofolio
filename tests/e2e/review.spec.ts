@@ -38,7 +38,7 @@ test("personal project filters preserve the audience boundary", async ({ page })
   await page.getByRole("button", { name: "Kampus", exact: true }).click();
   await expect(page.locator(".public-project")).toHaveCount(1);
   await expect(
-    page.getByRole("heading", { name: "Proyek perkuliahan", exact: true }),
+    page.locator("#work").getByRole("heading", { name: "Proyek perkuliahan", exact: true }),
   ).toBeVisible();
 });
 test("private routes and APIs deny unauthenticated visitors", async ({ page, request }) => {

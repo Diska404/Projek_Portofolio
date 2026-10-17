@@ -134,3 +134,16 @@ Unchanged scope: no provider token/API fetching, database, authentication, bridg
 Checkpoint: CR002 and T006 remain IN_REVIEW; T007/T008 TODO; full R0/R1 NO-GO. Next owner review: analytics hierarchy, density and two-audience composition. Later setup needs the YouTube channel URL/ID, WakaTime coverage and explicit approved repository lists; secrets belong in local owner configuration, never chat or public source.
 
 Additional local evidence: personal/creator analytics manually inspected in the in-app browser; screenshots saved to ignored docs/evidence/personal-analytics-review.png and creator-analytics-review.png. HTTP smoke PASS. The existing START-SEMUA-WEB.bat successfully started all five services; read-only status reported hub/AI/SignalDeck/personal/creator online. Authenticated GitHub API identity verified as RaizeiID before push.
+
+
+## CR003A — Actual-work ledger and AI/community/gaming review
+
+Date: 18 October 2026, Asia/Jakarta (audit began 17 October). Status: IMPLEMENTED / IN_REVIEW.
+
+Owner selected automatic sessions plus manual journal/corrections, with daily public summaries permitted and conversation/live-presence data excluded. Added work-first personal composition, AI experience view, creator community/Steam view and a clearly synthetic local-only interval simulation. Existing GitHub/YouTube analytics remain separately scoped. No statistics, AI experience, game ownership or past activity was invented.
+
+Implemented pure accounting contracts: revision idempotency/conflict exclusion/correction/tombstone behavior; union of active intervals across sources/projects, period clipping, Jakarta day splitting, separate source durations and overlap, programming-versus-natural-language approval; successful-inference/model normalization and token gaps; visible ordered Steam-counter deltas and reset/unavailable handling. These helpers assume adapter-validated inputs and owner approvals; they are not exposed ingestion endpoints or an authentication layer. Work summaries contain allowlisted daily fields, never note bodies, IDs or exact session timestamps.
+
+Audited existing Local AI source without reading owner data or calling the side-effectful /api/usage endpoint. It distinguishes inference and loaded runtime, but its summary includes loaded-only models as used and exposes local paths/private metadata. Future outbound adapter must normalize and sanitize it instead of publishing its response. Existing local source/runtime/database remain unchanged.
+
+Checks: full check/build PASS; 44 unit/security tests PASS; 25 Chromium E2E PASS; both isolated production smoke checks PASS. New simulation is disabled in normal production and absent from creator routes. In-app visual evidence and full file inventory are in ACTIVITY_LEDGER_PLAN.md. Account identity/publication policy remains personal Diska404 + RaizeiID, creator RaizeiID/community-only. T006 remains IN_REVIEW; T007/T008 TODO; full R0/R1 NO-GO. Next: owner visual review, then the existing R0 database/auth tasks before durable journal/adapter implementation. CR003B–F dependencies are explicit in the plan.

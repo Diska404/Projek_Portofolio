@@ -99,10 +99,10 @@ export function analyticsContent(audience: PortfolioAudience): PublicAnalytics {
     };
   return {
     audience,
-    eyebrow: "ENGINEERING ACTIVITY",
-    title: "Kemajuan, lewat bukti kerja.",
+    eyebrow: "GITHUB & CODING",
+    title: "Jejak kode dan publikasi.",
     description:
-      "Kontribusi, waktu coding, bahasa, dan kebiasaan membangun. Dua akun GitHub, satu perjalanan dengan sumber yang tetap jelas.",
+      "Dua akun GitHub dan sumber coding tersendiri. Kontribusi dan publikasi melengkapi catatan proses kerja, dengan cakupan yang tetap terlihat.",
     githubAccounts: ["Diska404", "RaizeiID"].map((login) => ({
       login,
       href: `https://github.com/${login}`,

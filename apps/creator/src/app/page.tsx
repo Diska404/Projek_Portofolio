@@ -1,3 +1,4 @@
+import { ledgerContent } from "@/lib/ledger-content";
 import { analyticsContent } from "@/lib/analytics-content";
 import { PublicPortfolio } from "@/components/public-portfolio";
 import { publicProfile } from "@/lib/public-content";
@@ -8,6 +9,7 @@ export default function CreatorHome() {
       showReview={false}
       profile={publicProfile("creator")}
       analytics={analyticsContent("creator")}
+      ledger={ledgerContent("creator")}
     />
   );
 }

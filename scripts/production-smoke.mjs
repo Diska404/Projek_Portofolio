@@ -56,7 +56,14 @@ try {
     html,
     /R0 \/ DESIGN REVIEW|SAMPLE DATA · DESIGN PREVIEW|source_account_alias|credential_ref/,
   );
-  for (const screen of ["overview", "projects", "integrations", "privacy", "design-system"]) {
+  for (const screen of [
+    "overview",
+    "projects",
+    "integrations",
+    "privacy",
+    "design-system",
+    "activity",
+  ]) {
     assert.equal((await globalThis.fetch(base + "/preview/" + screen)).status, 404, screen);
   }
   const denied = await globalThis.fetch(base + "/api/owner/projects?owner_id=spoofed");

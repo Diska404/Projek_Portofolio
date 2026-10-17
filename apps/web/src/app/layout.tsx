@@ -3,6 +3,7 @@ import "@devpulse/ui/tokens.css";
 import "./globals.css";
 import "./audience.css";
 import "./analytics.css";
+import "./activity-atlas.css";
 export const metadata: Metadata = {
   title: { default: "DevPulse — Karya & perjalanan.", template: "%s · DevPulse" },
   description:

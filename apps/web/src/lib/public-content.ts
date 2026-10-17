@@ -50,7 +50,7 @@ export function publicProfile(audience: PortfolioAudience): PortfolioProfile {
     intro: "Satu tempat untuk setiap langkah yang berarti.",
     headline: ["Karya yang bertumbuh.", "Proses yang terlihat."],
     description:
-      "Perjalanan pengembangan lewat kontribusi GitHub, waktu coding, dan bahasa pemrograman. Dari proyek kuliah hingga aplikasi penerjemah dan karya untuk komunitas.",
+      "Proses membangun, menerjemahkan, dan belajar—termasuk pekerjaan sebelum rilis. Dilengkapi jejak GitHub, penggunaan bahasa, dan pengalaman AI dengan sumber yang jelas.",
     projectIntro: "Setiap proyek, satu cerita.",
     projects: [
       {
