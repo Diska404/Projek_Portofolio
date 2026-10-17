@@ -1,6 +1,6 @@
 task_id,priority,title_and_deliverable,dependencies,acceptance,status,checkpoint_note
 T001,P0,Initialize monorepo and strict TypeScript,—,"Installs, dev server starts, typecheck passes",DONE,Local acceptance evidence recorded
-T002,P0,"Repo conventions, lint/format/husky/CI",T001,CI runs lint/typecheck/test/build,IN_REVIEW,Local checks pass; hosted CI and actual commit-hook execution pending
+T002,P0,"Repo conventions, lint/format/husky/CI",T001,CI runs lint/typecheck/test/build,DONE,Real pre-commit hook PASS; GitHub Actions run 39009300832 PASS on 5265def
 T003,P0,Define design tokens and dark green theme,T001,Consistent theme documented; contrast checked,DONE,Local acceptance evidence recorded
 T004,P0,"Public navigation, owner dashboard sidebar/shell",T003,Responsive and accessible navigation,DONE,Local acceptance evidence recorded
 T005,P0,"Card/chart skeleton, loading/error/empty components",T003,Storybook/demo with every required state,DONE,Local acceptance evidence recorded

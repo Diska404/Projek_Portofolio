@@ -38,7 +38,7 @@ npm audit
 
 `check` runs ESLint, formatting, strict TypeScript, unit tests, credential-pattern scan and production build. HTTP checks need the development server running. E2E starts a local dev server if necessary. Browser screenshots are written to docs/evidence and ignored by Git. Palette contrast checks do not replace a full WCAG audit.
 
-CI is defined in .github/workflows/ci.yml. Source upload is being prepared for https://github.com/Diska404/Projek_Portofolio under the verified Diska404 account. See docs/GITHUB_WORKFLOW.md for repository-local account settings and the upload boundary; hosted CI evidence is recorded separately from local checks.
+Source is versioned at https://github.com/Diska404/Projek_Portofolio under the verified Diska404 account. The real pre-commit hook and the [initial hosted CI run](https://github.com/Diska404/Projek_Portofolio/actions/runs/39009300832) passed. CI runs lint, formatting, typecheck, unit tests, credential scan, production build/boundary smoke and Chromium E2E. See docs/GITHUB_WORKFLOW.md for account settings and upload evidence.
 
 The initial lint preset included a vulnerable transitive glob chain. It was replaced with direct ESLint 10 + typescript-eslint + React Hooks rules; npm audit then reported zero findings. The generated initial dependency directory was isolated under .r0-dependency-backup and ignored by Git; it is unused by the current app. It can be discarded after review, with no source or user data involved.
 
@@ -58,6 +58,6 @@ Reference images stay in docs/planning and are not served as public assets. The 
 
 ## Current gate
 
-R0a: T001 and T003–T005 verified locally; T002 local checks pass with hosted CI/hook execution pending; T006 visual review pending. T007 database and T008 provider authentication are planned but not implemented, following the user's requested prototype-before-backend checkpoint. Full R0 and R1 are not approved. Monkeytype/Umami integrations are R2; local AI/SignalDeck ingestion is R3.
+R0a: T001–T005 verified, including T002 real pre-commit and hosted CI evidence; T006 visual review pending. T007 database and T008 provider authentication are planned but not implemented, following the user's requested prototype-before-backend checkpoint. Full R0 and R1 are not approved. Monkeytype/Umami integrations are R2; local AI/SignalDeck ingestion is R3.
 
 See docs/R0_IMPLEMENTATION_PLAN.md, docs/DESIGN_SYSTEM.md, docs/IMPLEMENTATION_LOG.md and docs/R0_REVIEW.md for evidence and exact next steps.

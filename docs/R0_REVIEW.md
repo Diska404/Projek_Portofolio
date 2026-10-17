@@ -14,8 +14,8 @@ The neighboring Ecosystem v2.0 is unchanged. The planning pack has been preserve
 
 | Task | Status | Changed files | Evidence / remaining issue |
 |---|---|---|---|
-| T001 | DONE locally | package.json, package-lock.json, apps/web/package.json, tsconfig.json, next.config.ts, app/layout.tsx, workspace packages | Install, loopback dev server, strict typecheck and production build pass. Git initialized; no commit/push |
-| T002 | IN_REVIEW | eslint.config.mjs, .prettierrc.json, .prettierignore, .husky/pre-commit, .github/workflows/ci.yml, scripts/, tests/, playwright.config.ts, .env.example, .gitignore | Lint, format, tests, secret scan, production build pass locally. Hosted CI and actual commit-hook execution have not run |
+| T001 | DONE | package.json, package-lock.json, apps/web/package.json, tsconfig.json, next.config.ts, app/layout.tsx, workspace packages | Install, loopback dev server, strict typecheck and production build pass. Source committed and pushed to Diska404/Projek_Portofolio |
+| T002 | DONE | eslint.config.mjs, .prettierrc.json, .prettierignore, .husky/pre-commit, .github/workflows/ci.yml, scripts/, tests/, playwright.config.ts, .env.example, .gitignore | Real pre-commit checks PASS; hosted lint/format/typecheck/unit/secret/build/production smoke/E2E PASS on 5265def, run 39009300832 |
 | T003 | DONE locally | packages/ui/tokens.css, apps/web/src/app/globals.css, docs/DESIGN_SYSTEM.md | Palette contrast tested; screenshots inspected; owner taste review remains T006 |
 | T004 | DONE locally | components/shared.tsx, icons.tsx, public-portfolio.tsx, dashboard.tsx, public/preview routes | Responsive public/workspace shells; navigation, mobile focus/escape/return, public sample filtering pass |
 | T005 | DONE locally | packages/contracts/src/index.ts, fixtures.ts, components/data-widgets.tsx, design-system preview | All nine states reviewed in browser test; null differs from zero; stale preserves last-known value; text/table chart alternatives |
@@ -42,6 +42,8 @@ Full machine-readable task board: docs/TASK_STATUS.csv. Original task CSV remain
 | npm run test:ui | 10/10 PASS in Chromium on Windows |
 | npm run test:production | PASS: normal production preview routes 404; review navigation absent; owner API 401/no-store; dashboard redirects; isolated test server stopped |
 | Manual in-app browser | Public and dashboard composition inspected; navigation works; sample provenance visible |
+| Real initial commit hook | PASS: lint, typecheck, 10 unit tests, credential-pattern scan; author/committer Diska404 |
+| Hosted GitHub Actions, initial source | PASS: [run 39009300832](https://github.com/Diska404/Projek_Portofolio/actions/runs/39009300832), commit 5265def; checks, production smoke and Chromium E2E |
 
 E2E scope: portfolio/overview/design-system at 390, 768, 1440, 1920px without page overflow; synthetic date filters and 30/90 coverage; unconfigured state; dashboard/public mobile Escape and focus return; sample project filtering; private boundary; all nine component states.
 
@@ -68,15 +70,15 @@ The source frames do not include a detailed Overview/WakaTime/GitHub screen. Fid
 - Owner identity, approved projects, biography, contact information and avatar are not supplied. UI uses neutral placeholders and labeled sample work.
 - Provider accounts/tokens, Supabase project, domain, deployment budget and scheduler plan are not supplied. None are necessary for this preview.
 - No database, schema migration, provider contract test, actual login/session, publication revoke test, full IDOR test against persisted records, RLS, rate limiting or secret vault is implemented yet.
-- No hosted CI run, deployment, real mobile device test, Safari/Firefox test, complete WCAG audit or production web-vitals benchmark. E2E uses Chromium on this Windows machine.
+- No deployment, real mobile device test, Safari/Firefox test, complete WCAG audit or production web-vitals benchmark. Chromium E2E passes locally on Windows and in the initial hosted Ubuntu CI run.
 - All UI is an English-first design proposal. Language choice and preferred density await review.
-- Source is uncommitted; Git initialized locally with no remote. Husky configured but commit hook not exercised by a real commit.
+- Source is committed and pushed under Diska404 with repository-local credentials/identity. This is source versioning, not a production deployment. Future commits must retain passing checks.
 - The generated initial dependency installation was retained in an ignored .r0-dependency-backup after resolver conflict; it is unused by the final app. No user/application data was removed.
 
 ## Exact next checkpoint
 
 Review T006 visual design: public composition, dashboard density, green accent, navigation groups, widget hierarchy, disconnected states and mobile behavior. Record owner requested revisions or approval here. Do not treat this report as visual approval.
 
-After visual review: finish T002 hosted/hook evidence when a repository remote is chosen; implement T007 database/migrations and T008 Supabase auth in their dependency order; validate full R0 before starting T009. R2 provider extensions and R3 local integration remain deferred.
+T002 hosted/hook evidence is now complete. After visual review, implement T007 database/migrations and T008 Supabase auth in their dependency order; validate full R0 before starting T009. R2 provider extensions and R3 local integration remain deferred.
 
 Local preview: http://127.0.0.1:3100/preview/overview . Start from repository root with npm run dev; stop with Ctrl+C. The isolated production smoke server has already been stopped. The development server is kept for this local review handoff.

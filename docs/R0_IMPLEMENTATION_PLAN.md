@@ -25,7 +25,7 @@ Reference evidence: video_0s shows a project gallery; video_8s shows profile/sid
 | Task | Depends on | Current iteration deliverable | Validation | Gate |
 |---|---|---|---|---|
 | T001 | — | npm workspace, pinned Next/React, strict TS, loopback preview | install, dev readiness, typecheck, build | technical |
-| T002 | T001 | conventions, ESLint, Prettier, CI, local hook configuration, testing scripts | lint, format, tests, CI definition; remote CI pending | technical |
+| T002 | T001 | conventions, ESLint, Prettier, CI, local hook configuration, testing scripts | lint, format, tests, real hook and hosted CI PASS; run 39009300832 | technical |
 | T003 | T001 | dark/green tokens, type/space/radius/motion scale, contrast checks | contrast calculations and component review | visual review |
 | T004 | T003 | distinct public navigation and owner-review sidebar; mobile drawer | keyboard, escape/focus, responsive navigation | visual review |
 | T005 | T003 | component/state gallery: all nine required data states | state contract unit tests, rendering, text alternatives | technical/review |

@@ -85,3 +85,15 @@ Evidence: 12 responsive screenshots for portfolio/overview/design-system across 
 Remaining: owner review of identity direction, density, navigation, widget composition and language choice. No real owner profile/contact/project data was supplied. No hosted CI, deployment, real provider auth, DB, provider sync, full accessibility audit or production performance benchmark is claimed.
 
 Checkpoint: R0a READY FOR REVIEW; full R0/R1 NO-GO. After owner review, finish the remaining T002 evidence and proceed to T007 then T008. Do not start R1, R2 or R3 based solely on this prototype.
+
+## TASK T002 — GitHub source upload and remaining evidence
+
+Date: 17 October 2026. Status: DONE. Earlier entries describe the pre-upload checkpoint.
+
+User authorized uploading the portfolio to Diska404/Projek_Portofolio and the independent ecosystem to Diska404/Private_Ecosystem_Web. Cached Git Credential Manager credentials were verified as Diska404 using the authenticated GitHub user API. Git author, no-reply email and credential username are configured per repository; global settings remain unchanged. The owner confirmed RaizeiID is the separate personal/YouTube/GFL2 Bahasa Indonesia account.
+
+Changed: docs/GITHUB_WORKFLOW.md, README.md, current task/review/plan checkpoints, and the Next-generated next-env.d.ts refreshed by next typegen. No product feature or backend integration was added. Real environment files, dependencies, build output and local screenshots remain ignored. The staged snapshot was scanned for common credential patterns and forbidden local data before upload.
+
+Evidence: initial commit 5265def pushed successfully under Diska404; the actual pre-commit hook passed lint, strict typecheck, 10 unit tests and credential scan. Hosted run https://github.com/Diska404/Projek_Portofolio/actions/runs/39009300832 completed SUCCESS on that commit, including full check/build, production boundary smoke and Chromium E2E. T002 is DONE; T006 remains IN_REVIEW and T007/T008 TODO.
+
+Continuation: review the visual prototype, record owner design decisions, then implement the remaining R0 database/auth tasks in dependency order. Source upload is not web deployment or approval to advance to R1.
