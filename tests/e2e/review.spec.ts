@@ -33,11 +33,13 @@ test("mobile drawer supports escape and returns focus", async ({ page }) => {
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(trigger).toBeFocused();
 });
-test("public sample filters work without publishing any records", async ({ page }) => {
+test("personal project filters preserve the audience boundary", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "Open source", exact: true }).click();
+  await page.getByRole("button", { name: "Kampus", exact: true }).click();
   await expect(page.locator(".public-project")).toHaveCount(1);
-  await expect(page.getByRole("button", { name: "Orbit CLI", exact: true })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Proyek perkuliahan", exact: true }),
+  ).toBeVisible();
 });
 test("private routes and APIs deny unauthenticated visitors", async ({ page, request }) => {
   await page.goto("/dashboard/projects");

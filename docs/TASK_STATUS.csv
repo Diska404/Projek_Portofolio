@@ -48,3 +48,4 @@ T046,P2,Cloud aggregation and retention configuration,"T044,T045",Idempotent ing
 T047,P2,Private Local Systems dashboard,T046,Latest/stale/offline states accurate,TODO,Release dependencies not yet satisfied
 T048,P2,"P2 threat model, stress test, security review",T047,No remote OC/UV endpoints; no sensitive payload,TODO,Release dependencies not yet satisfied
 T049,P2,R3 release and operational guide,T048,Installation/uninstall/rollback documented,TODO,Release dependencies not yet satisfied
+CR001,P0,"Two public audiences and guarded creator-to-personal shortcut","T004,T005","Separate projections; server disclosure guard; negative/privacy/browser tests",IN_REVIEW,Implementation validated locally; owner visual review and production bridge deployment remain open

@@ -4,6 +4,8 @@ Date: 17 October 2026 · Asia/Jakarta
 Decision: **READY FOR VISUAL REVIEW / NO-GO FOR R1**
 Owner visual signoff: **PENDING**
 
+CR001 update: the owner requested and confirmed separate personal/creator portfolios with a guarded creator → personal shortcut. Current implementation/evidence is recorded in `DUAL_PORTFOLIO_PLAN.md` and the final CR001 entry in `IMPLEMENTATION_LOG.md`; the initial R0a figures below describe the earlier baseline. T006 visual review remains open. T007/T008 are not implemented by the shortcut feature.
+
 ## Delivered scope
 
 The initially empty DevWev Portofolio folder now contains a local Next.js/React/TypeScript workspace, original dark/green design system, public portfolio composition, owner-dashboard design preview and nine-state component gallery. There is no connected provider, user database, provider-managed authentication, project CRUD, public snapshot pipeline or local telemetry integration. The public project cards and preview metrics are explicitly synthetic review content.

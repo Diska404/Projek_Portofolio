@@ -28,3 +28,17 @@ npm run dev
 Open http://127.0.0.1:3100/ or http://127.0.0.1:3100/preview/overview . This upload does not deploy the website to GitHub Pages or another hosting service.
 
 The owner confirmed **Diska404 for college** and **RaizeiID for personal, YouTube and GFL2 Bahasa Indonesia**. Use repository-local identity settings for each account. No personal destination repository has been selected or uploaded in this checkpoint.
+
+## Updated instruction — all subsequent contributions use RaizeiID
+
+The owner subsequently requested updates to these existing repositories under **RaizeiID** so contributions are credited to the personal account. The destination owner remains Diska404. RaizeiID was given collaborator **Write** access on these two owner-specified repositories, with the invitation accepted using the verified RaizeiID credentials; no admin role or visibility change was made.
+
+Current repository-local identity:
+
+```powershell
+git config --local user.name RaizeiID
+git config --local user.email 275431878+RaizeiID@users.noreply.github.com
+git config --local credential.https://github.com.username RaizeiID
+```
+
+The remote URL selects RaizeiID authentication while retaining the Diska404 repository path. GitHub contribution eligibility is subject to GitHub's own rules; commit author and default-branch push are verified, rather than promising when the profile graph refreshes. Public contribution history may correlate the college and creator identities; the invitation shortcut does not hide that history.

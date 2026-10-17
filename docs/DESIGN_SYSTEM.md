@@ -74,3 +74,8 @@ The overview preview defaults to visibly marked deterministic SAMPLE DATA. The a
 - Confirm English-first UI or request an Indonesian language pass.
 - Provide approved identity/content only when beginning content tasks.
 - Keep T006 IN_REVIEW and full R0 open until the explicit gate decisions are recorded.
+
+
+## CR001 audience layout
+
+The full supplied video confirms the profile-sidebar/card/green-number direction. Both portfolio homes now use an original compact identity rail with dark surfaces, restrained borders and green emphasis, aligned with the owner workspace. Personal and creator content are projected server-side into the shared shell. Creator has its own brand label, translation illustration, community cards and a neutral invitation avatar; no legal-name/photo teaser appears before verification. Personal has a photograph placeholder and a direct creator-avatar shortcut. Original code-native artwork replaces public fictional project samples with owner-requested draft project slots. The internal dashboard retains clearly labeled synthetic data for review. Responsive evidence is in docs/evidence; owner visual signoff remains pending.

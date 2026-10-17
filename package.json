@@ -12,9 +12,11 @@
   },
   "scripts": {
     "dev": "npm run dev --workspace @devpulse/web",
-    "build": "npm run build --workspace @devpulse/web",
+    "dev:creator": "npm run dev --workspace @devpulse/creator",
+    "build": "npm run build --workspaces --if-present",
     "start": "npm run start --workspace @devpulse/web",
-    "typecheck": "npm run typecheck --workspace @devpulse/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "setup:bridge": "tsx scripts/setup-bridge.ts",
     "lint": "eslint apps packages tests scripts *.mjs *.ts",
     "format": "prettier --write apps packages tests scripts *.json *.mjs *.ts .github",
     "format:check": "prettier --check apps packages tests scripts *.json *.mjs *.ts .github",
@@ -24,7 +26,7 @@
     "check:secrets": "node scripts/check-secrets.mjs",
     "check": "npm run lint && npm run format:check && npm run typecheck && npm test && npm run check:secrets && npm run build",
     "prepare": "husky",
-    "test:production": "node scripts/production-smoke.mjs"
+    "test:production": "node scripts/production-smoke.mjs && node scripts/creator-production-smoke.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",

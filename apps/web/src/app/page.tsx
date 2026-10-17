@@ -1,6 +1,14 @@
 import { PublicPortfolio } from "@/components/public-portfolio";
 import { reviewEnabled } from "@devpulse/contracts";
+import { publicProfile } from "@/lib/public-content";
+import { creatorUrl } from "@/lib/site-config";
 export const dynamic = "force-dynamic";
 export default function Home() {
-  return <PublicPortfolio showReview={reviewEnabled(process.env)} />;
+  return (
+    <PublicPortfolio
+      showReview={reviewEnabled(process.env)}
+      profile={publicProfile("personal")}
+      creatorUrl={creatorUrl()}
+    />
+  );
 }

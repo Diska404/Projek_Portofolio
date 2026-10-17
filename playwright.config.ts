@@ -3,11 +3,19 @@ export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: false,
   use: { baseURL: "http://127.0.0.1:3100", headless: true },
-  webServer: {
-    command: "npm run dev",
-    url: "http://127.0.0.1:3100",
-    reuseExistingServer: !process.env.CI,
-    timeout: 120000,
-  },
+  webServer: [
+    {
+      command: "npm run dev",
+      url: "http://127.0.0.1:3100",
+      reuseExistingServer: !process.env.CI,
+      timeout: 120000,
+    },
+    {
+      command: "npm run dev:creator",
+      url: "http://127.0.0.1:3101",
+      reuseExistingServer: !process.env.CI,
+      timeout: 120000,
+    },
+  ],
   reporter: "list",
 });

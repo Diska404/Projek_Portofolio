@@ -1,6 +1,6 @@
 # DevPulse Portfolio — R0 review
 
-Local visual prototype and foundation for a public developer portfolio plus a future owner-only dashboard. This continues the supplied DevPulse planning pack; no production backend, database, provider integration, analytics tracker or local agent is connected.
+Two local public-portfolio prototypes with separate audiences: a personal portfolio (`apps/web`, port 3100) and a creator/community portfolio (`apps/creator`, port 3101). Shared original design components, separate server projections and routes. This continues the supplied planning pack plus the owner's CR001 request; no production database, provider integration, analytics tracker or local agent is connected.
 
 ## Run on Windows
 
@@ -11,11 +11,19 @@ npm ci
 npm run dev
 ```
 
-The server binds only to 127.0.0.1:3100. Use Ctrl+C in its terminal to stop it. Node modules are reproducible from package-lock.json; do not distribute node_modules or .next.
+In another terminal, `npm run dev:creator` starts the YouTube/community portfolio on http://127.0.0.1:3101/ . The parent workspace's `START-SEMUA-WEB.bat` now starts both portfolios and all three ecosystem services. The applications have separate Next build directories and do not share a single route tree.
+
+Personal → creator: click the Raizei avatar in the sidebar. Creator → personal: choose **Ruang undangan** and enter the access code. `SETUP-AKSES-PORTOFOLIO.bat` generates a random local code and shows it only in the owner's interactive console; the password hash, encrypted destination and separate encryption key live outside Git/OneDrive under the user's local app-data directory. The original code is not stored and cannot be recovered from its hash. Rotate with `npm run setup:bridge -- --rotate`. Setup does not overwrite existing configuration without that flag.
+
+This guards discovery through the shortcut; the personal site itself remains public. The bridge is enabled only in development: normal production denies disclosure with 503 until shared abuse-control storage and deployment review exist. It never grants owner dashboard/API access. See `docs/DUAL_PORTFOLIO_PLAN.md` for limits, encryption choices and privacy acceptance. The default local destination is 127.0.0.1:3100; a real destination is configured privately through `DEVPULSE_PERSONAL_DESTINATION` during owner setup, never through a NEXT_PUBLIC variable.
+
+Both servers bind only to 127.0.0.1. Use Ctrl+C in each terminal to stop its portfolio. Node modules are reproducible from package-lock.json; do not distribute node_modules or .next.
 
 Review routes:
 
-- http://127.0.0.1:3100/ — public composition, sample projects, unpublished stats.
+- http://127.0.0.1:3100/ — personal composition, college/community/application draft entries, unpublished stats.
+- http://127.0.0.1:3101/ — creator composition, community/application draft entries, no college/personal content.
+- http://127.0.0.1:3101/access — guarded invitation shortcut; no personal photograph or destination is sent before verification.
 - http://127.0.0.1:3100/preview/overview — dashboard study; Sample data / Not connected modes.
 - http://127.0.0.1:3100/preview/design-system — tokens, component family, all nine data states.
 - http://127.0.0.1:3100/preview/projects — read-only project composition.
@@ -46,6 +54,7 @@ The initial lint preset included a vulnerable transitive glob chain. It was repl
 
 ```text
 apps/web/              Next.js App Router, public/preview shells, deny-only owner boundary
+apps/creator/          separate creator routes, metadata, invitation UI and local bridge
 packages/ui/           shared CSS tokens
 packages/contracts/    typed data states and clearly separated synthetic review fixtures
 tests/                 unit and headless browser regression
@@ -54,7 +63,7 @@ docs/planning/         original planning documents and review-only reference ima
 docs/                  implementation plan, design system, log and review checkpoint
 ```
 
-Reference images stay in docs/planning and are not served as public assets. The neighboring Ecosystem v2.0 project has not been modified by this work.
+Reference images stay in docs/planning and are not served as public assets. The supplied full video and derived QA frames remain outside published source. The neighboring ecosystem's portable launcher bundle was updated for the fifth service; its application/runtime/hardware behavior was not changed by CR001.
 
 ## Current gate
 

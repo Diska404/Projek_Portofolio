@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import "@devpulse/ui/tokens.css";
 import "./globals.css";
+import "./audience.css";
 export const metadata: Metadata = {
-  title: { default: "DevPulse — A work in progress, thoughtfully.", template: "%s · DevPulse" },
+  title: { default: "DevPulse — Karya & perjalanan.", template: "%s · DevPulse" },
   description:
-    "R0 design review of a developer portfolio and private workspace. Sample content only.",
+    "Portofolio pribadi untuk perjalanan kuliah, pengembangan aplikasi, terjemahan, dan aktivitas kreator. Konten sedang disiapkan.",
   robots: { index: false, follow: false },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <body>
         <a className="skip-link" href="#main">
           Skip to content
