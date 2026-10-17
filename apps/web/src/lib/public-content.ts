@@ -34,12 +34,12 @@ export function publicProfile(audience: PortfolioAudience): PortfolioProfile {
       intro: "Cerita, bahasa, dan hal-hal yang kita bangun bersama.",
       headline: ["Menerjemahkan cerita.", "Menghubungkan komunitas."],
       description:
-        "Catatan kreator tentang GFL2 Bahasa Indonesia, aplikasi penerjemah, dan proses di balik karya yang dibagikan di YouTube.",
+        "Aktivitas video, live streaming, dan cerita komunitas di YouTube. Di baliknya: GFL2 Bahasa Indonesia, aplikasi penerjemah, dan pengembangan bersama komunitas.",
       projectIntro: "Karya untuk komunitas.",
       projects: communityProjects,
       socials: [
         { label: "YouTube", detail: "Tautan kanal menunggu pengaturan", href: null },
-        { label: "GitHub", detail: "Profil publik menunggu persetujuan", href: null },
+        { label: "GitHub", detail: "RaizeiID", href: "https://github.com/RaizeiID" },
       ],
     };
   }
@@ -50,7 +50,7 @@ export function publicProfile(audience: PortfolioAudience): PortfolioProfile {
     intro: "Satu tempat untuk setiap langkah yang berarti.",
     headline: ["Karya yang bertumbuh.", "Proses yang terlihat."],
     description:
-      "Portofolio pribadi yang mempertemukan perjalanan kuliah, pengembangan aplikasi, terjemahan, dan aktivitas sebagai kreator.",
+      "Perjalanan pengembangan lewat kontribusi GitHub, waktu coding, dan bahasa pemrograman. Dari proyek kuliah hingga aplikasi penerjemah dan karya untuk komunitas.",
     projectIntro: "Setiap proyek, satu cerita.",
     projects: [
       {

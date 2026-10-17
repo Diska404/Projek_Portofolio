@@ -34,8 +34,7 @@ for (const stream of [child.stdout, child.stderr])
     log = (log + chunk).slice(-4000);
   });
 const base = `http://127.0.0.1:${port}`;
-const forbidden =
-  /college-work|Proyek perkuliahan|Profil pribadi|Diska404|RaizeiID|127\.0\.0\.1:3100/;
+const forbidden = /college-work|Proyek perkuliahan|Profil pribadi|Diska404|127\.0\.0\.1:3100/;
 try {
   let ready = false;
   for (let i = 0; i < 60; i++) {
@@ -54,6 +53,7 @@ try {
   const html = await root.text();
   assert.doesNotMatch(html, forbidden);
   assert.match(html, /GFL2 Bahasa Indonesia/);
+  assert.match(html, /https:\/\/github\.com\/RaizeiID/);
   for (const file of [
     ...new Set([...html.matchAll(/<script[^>]*src="([^"]+)"/g)].map((match) => match[1])),
   ]) {

@@ -49,3 +49,4 @@ T047,P2,Private Local Systems dashboard,T046,Latest/stale/offline states accurat
 T048,P2,"P2 threat model, stress test, security review",T047,No remote OC/UV endpoints; no sensitive payload,TODO,Release dependencies not yet satisfied
 T049,P2,R3 release and operational guide,T048,Installation/uninstall/rollback documented,TODO,Release dependencies not yet satisfied
 CR001,P0,"Two public audiences and guarded creator-to-personal shortcut","T004,T005","Separate projections; server disclosure guard; negative/privacy/browser tests",IN_REVIEW,Implementation validated locally; owner visual review and production bridge deployment remain open
+CR002,P0,"Audience-specific engineering and creator analytics","T004,T005,CR001","Account projection isolation; unknown values; deduplication; source definitions; responsive browser and production checks",IN_REVIEW,"28 unit and 18 E2E pass; both builds and production isolation pass; real providers and owner visual acceptance pending"

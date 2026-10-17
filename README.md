@@ -70,3 +70,10 @@ Reference images stay in docs/planning and are not served as public assets. The 
 R0a: T001–T005 verified, including T002 real pre-commit and hosted CI evidence; T006 visual review pending. T007 database and T008 provider authentication are planned but not implemented, following the user's requested prototype-before-backend checkpoint. Full R0 and R1 are not approved. Monkeytype/Umami integrations are R2; local AI/SignalDeck ingestion is R3.
 
 See docs/R0_IMPLEMENTATION_PLAN.md, docs/DESIGN_SYSTEM.md, docs/IMPLEMENTATION_LOG.md and docs/R0_REVIEW.md for evidence and exact next steps.
+
+
+## Audience analytics review (CR002)
+
+Personal statistics at http://127.0.0.1:3100/#statistics use Diska404 + RaizeiID scopes and emphasize engineering evidence. Creator statistics at http://127.0.0.1:3101/#statistics emphasize YouTube videos/completed live/verified posts and only the approved RaizeiID GitHub account. Both are interactive R0 compositions; all observations remain unconnected (—). The profile links do not establish provider authentication. Personal GitHub language bytes and WakaTime coding duration have separate views. Creator Community posts await owner-verified records; community repository allowlists remain pending.
+
+Updates now use repository-local RaizeiID authorship/credentials; repository ownership remains Diska404. See docs/AUDIENCE_ANALYTICS_PLAN.md for current definitions, explicit approval superseding CR001's unlinked-handle default, file inventory and continuation checkpoint. Current local verification: 28 unit/security tests, 18 Chromium E2E, full lint/format/type/build and both production smoke checks pass. Owner visual review is pending; T007/T008 and real data integrations remain unimplemented.

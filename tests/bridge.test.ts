@@ -37,8 +37,14 @@ test("creator projection excludes college work and personal fields", () => {
   assert.equal(publicProfile("personal").projects.length, 3);
   assert.ok(creator.projects.some((p) => p.id === "gfl2-localization"));
 });
-test("creator does not automatically link the personal GitHub identity", () => {
-  assert.doesNotMatch(JSON.stringify(publicProfile("creator")), /RaizeiID|github\.com/);
+test("creator links only the explicitly approved GitHub identity", () => {
+  assert.doesNotMatch(JSON.stringify(publicProfile("creator")), /Diska404/);
+  assert.deepEqual(
+    publicProfile("creator")
+      .socials.filter((s) => s.label === "GitHub")
+      .map((s) => s.href),
+    ["https://github.com/RaizeiID"],
+  );
   assert.ok(
     publicProfile("personal").socials.some(
       (social) => social.href === "https://github.com/RaizeiID",

@@ -84,3 +84,10 @@ Review T006 visual design: public composition, dashboard density, green accent, 
 T002 hosted/hook evidence is now complete. After visual review, implement T007 database/migrations and T008 Supabase auth in their dependency order; validate full R0 before starting T009. R2 provider extensions and R3 local integration remain deferred.
 
 Local preview: http://127.0.0.1:3100/preview/overview . Start from repository root with npm run dev; stop with Ctrl+C. The isolated production smoke server has already been stopped. The development server is kept for this local review handoff.
+
+
+## CR002 current analytics review
+
+Personal: Diska404 + RaizeiID, contributions/commits/active days, observed pushes and delivery evidence, WakaTime time versus GitHub language bytes. Creator: publishing frequency across videos/completed live/verified posts, audience period metrics, secondary community GitHub RaizeiID only. Analytics precede project cards. Interactive filters preserve unknown values until real adapters exist. Community posts await verified owner records; repository allowlists and channel configuration remain unset. The owner explicitly approved the RaizeiID public hyperlink, superseding CR001's previous unlinked default.
+
+Current checks: 28 unit/security + 18 Chromium E2E PASS; lint/format/types/both production builds and isolated production boundary checks PASS. Responsive evidence is local/ignored under docs/evidence. No database/auth/provider setup is claimed. T006/CR002 IN_REVIEW; T007/T008 TODO; full R0/R1 NO-GO.

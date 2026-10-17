@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@devpulse/ui/tokens.css";
 import "./globals.css";
 import "./audience.css";
+import "./analytics.css";
 export const metadata: Metadata = {
   title: { default: "DevPulse — Karya & perjalanan.", template: "%s · DevPulse" },
   description:

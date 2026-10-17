@@ -2,15 +2,19 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import type { PortfolioProfile } from "../../../../packages/contracts/src/portfolio";
+import type { PublicAnalytics } from "../../../../packages/contracts/src/public-analytics";
+import { PublicAnalyticsSection } from "./public-analytics";
 import { Icon } from "./icons";
 import { Badge, ReviewBar } from "./shared";
 
 export function PublicPortfolio({
   profile,
+  analytics,
   showReview,
   creatorUrl,
 }: {
   profile: PortfolioProfile;
+  analytics: PublicAnalytics;
   showReview: boolean;
   creatorUrl?: string;
 }) {
@@ -77,8 +81,8 @@ export function PublicPortfolio({
               {(
                 [
                   ["#about", "Tentang", "code"],
+                  ["#statistics", creator ? "Aktivitas kanal" : "Engineering", "activity"],
                   ["#work", "Proyek", "folder"],
-                  ["#statistics", "Proses & aktivitas", "activity"],
                   ["#social", "Temukan saya", "globe"],
                 ] as const
               ).map(([href, title, icon]) => (
@@ -153,11 +157,12 @@ export function PublicPortfolio({
               </h1>
               <p>{profile.description}</p>
               <div className="hero-ctas">
-                <a href="#work" className="button button-primary">
-                  Jelajahi karya <Icon name="arrowRight" size={16} />
+                <a href="#statistics" className="button button-primary">
+                  {creator ? "Lihat aktivitas kanal" : "Lihat aktivitas coding"}{" "}
+                  <Icon name="arrowRight" size={16} />
                 </a>
-                <a href="#social" className="text-link">
-                  Temukan saya <Icon name="arrowDown" size={14} />
+                <a href="#work" className="text-link">
+                  Jelajahi karya <Icon name="arrowDown" size={14} />
                 </a>
               </div>
             </div>
@@ -209,6 +214,7 @@ export function PublicPortfolio({
               </div>
             </div>
           </section>
+          <PublicAnalyticsSection content={analytics} />
           <section className="audience-work" id="work">
             <div className="audience-section-heading">
               <div>
@@ -293,47 +299,6 @@ export function PublicPortfolio({
                     </div>
                   </article>
                 ))}
-            </div>
-          </section>
-          <section className="audience-activity" id="statistics">
-            <div>
-              <span className="eyebrow">DI BALIK KARYA</span>
-              <h2>
-                Proses juga
-                <br />
-                <span>punya cerita.</span>
-              </h2>
-              <p>
-                Aktivitas dan kemajuan akan ditampilkan dari sumber yang Anda hubungkan dan setujui
-                untuk publik.
-              </p>
-              {showReview && (
-                <Link href="/preview/overview" className="text-link accent">
-                  Lihat rancangan dashboard <Icon name="arrowRight" size={15} />
-                </Link>
-              )}
-            </div>
-            <div className="activity-pending">
-              <div className="activity-pending-icon">
-                <Icon name="chart" size={24} />
-              </div>
-              <h3>Belum ada statistik publik.</h3>
-              <p>
-                GitHub, waktu coding, dan aktivitas YouTube belum terhubung. Tidak ada angka
-                perkiraan yang ditampilkan.
-              </p>
-              <div className="pending-sources">
-                <span>
-                  <Icon name="github" size={15} /> GitHub
-                </span>
-                <span>
-                  <Icon name="timer" size={15} /> WakaTime
-                </span>
-                <span>
-                  <Icon name="globe" size={15} /> YouTube
-                </span>
-              </div>
-              <Badge>Menunggu sumber & persetujuan</Badge>
             </div>
           </section>
           <section id="social" className="audience-social">
