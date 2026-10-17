@@ -4,6 +4,7 @@ import "./globals.css";
 import "./audience.css";
 import "./analytics.css";
 import "./activity-atlas.css";
+import "./evidence-charts.css";
 export const metadata: Metadata = {
   title: { default: "DevPulse — Karya & perjalanan.", template: "%s · DevPulse" },
   description:

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import type { LedgerPortfolio } from "../lib/ledger-content";
+import { ActivityCalendar, CompositionBar, UnconnectedWorkCharts } from "./evidence-charts";
 import { Icon } from "./icons";
 
 const stages = [
@@ -24,9 +25,11 @@ function UnknownMetric({ title, context }: { title: string; context: string }) {
 export function ActivityAtlas({
   content,
   showReview,
+  calendarEnd,
 }: {
   content: LedgerPortfolio;
   showReview: boolean;
+  calendarEnd: string;
 }) {
   const creator = content.audience === "creator";
   const [view, setView] = useState("work");
@@ -74,7 +77,7 @@ export function ActivityAtlas({
                 value={period}
                 onChange={(e) => setPeriod(Number(e.target.value))}
               >
-                {[7, 30, 90].map((days) => (
+                {[7, 30, 90, 180, 365].map((days) => (
                   <option key={days} value={days}>
                     {days} hari
                   </option>
@@ -100,6 +103,7 @@ export function ActivityAtlas({
             </select>
             <span role="status">{period} hari · Cakupan belum tersedia</span>
           </div>
+          <UnconnectedWorkCharts endDate={calendarEnd} days={period} />
           <div className="atlas-projects">
             {content.projects
               .filter((item) => project === "all" || item.id === project)
@@ -144,9 +148,14 @@ export function ActivityAtlas({
               publikasi.
             </p>
             {showReview && (
-              <a href="/preview/activity">
-                Tinjau cara hitung <Icon name="arrowUpRight" size={14} />
-              </a>
+              <span className="atlas-review-links">
+                <a href="/preview/activity">
+                  Tinjau cara hitung <Icon name="arrowUpRight" size={14} />
+                </a>
+                <a href="/preview/visuals">
+                  Tinjau diagram <Icon name="arrowUpRight" size={14} />
+                </a>
+              </span>
             )}
           </div>
           <div className="atlas-sources">
@@ -191,6 +200,12 @@ export function ActivityAtlas({
               ))}
             </div>
           </div>
+          <CompositionBar
+            title="Komposisi waktu per game"
+            unit="menit"
+            items={[]}
+            description={`${gameBasis} · Kategori menunggu library yang disetujui; tidak ada judul game perkiraan.`}
+          />
           <div className="atlas-empty">
             <Icon name="globe" size={30} />
             <h4>Library belum tersedia.</h4>
@@ -254,6 +269,41 @@ export function ActivityAtlas({
                 <b>—</b>
               </button>
             ))}
+          </div>
+          <div className="atlas-chart-period">
+            <label>
+              Periode grafik AI{" "}
+              <select
+                aria-label="Periode grafik AI"
+                value={period}
+                onChange={(e) => setPeriod(Number(e.target.value))}
+              >
+                {[7, 30, 90, 180, 365].map((days) => (
+                  <option key={days} value={days}>
+                    {days} hari
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <div className="evidence-chart-stack">
+            <ActivityCalendar
+              title="Kalender penggunaan AI"
+              endDate={calendarEnd}
+              days={period}
+              unit="permintaan"
+              description={`${aiSource} · Inferensi tercatat, terpisah dari tahap katalog pengalaman.`}
+            />
+            <CompositionBar
+              title="Komposisi sumber inferensi"
+              unit="permintaan"
+              description="Penggunaan cloud, lokal, dan sumber yang belum teridentifikasi."
+              items={[
+                { key: "cloud", label: "AI cloud", value: null },
+                { key: "local", label: "AI lokal", value: null },
+                { key: "unidentified", label: "Sumber belum teridentifikasi", value: null },
+              ]}
+            />
           </div>
           <div className="atlas-empty">
             <Icon name="cpu" size={30} />

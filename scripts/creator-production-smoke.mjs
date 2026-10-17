@@ -70,6 +70,7 @@ try {
   for (const route of [
     "/preview/overview",
     "/preview/activity",
+    "/preview/visuals",
     "/personal",
     "/dashboard/projects",
   ])

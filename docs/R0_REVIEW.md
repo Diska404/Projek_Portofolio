@@ -98,3 +98,10 @@ Current checks: 28 unit/security + 18 Chromium E2E PASS; lint/format/types/both 
 Review `http://127.0.0.1:3100/#journey` (project work + AI), `http://127.0.0.1:3101/#journey` (community + Steam), and `http://127.0.0.1:3100/preview/activity` (synthetic interval-union simulation, never persisted). Daily public summaries are owner-authorized; private content/exact session schedules/live presence are excluded. Real data remains unconnected and all cards unknown.
 
 44 unit/security and 25 E2E cases PASS; lint/format/types/both builds/production smoke PASS. Added AI, Steam and method review coverage at 390/768/1440/1920. Local screenshots are ignored; see ACTIVITY_LEDGER_PLAN.md for evidence, source audit, full file inventory and ordered CR003B–F implementation. This is R0 visual/accounting groundwork, not a completed recorder or connected social/Steam/AI service. T006/CR003A IN_REVIEW; T007/T008 TODO.
+
+
+## CR004 current visual analytics — 18 October 2026
+
+Review `http://127.0.0.1:3100/preview/visuals` for labeled sample heatmap/weekly/cumulative/composition patterns and unknown-state/coverage switching. Public personal/creator pages now use the same components with unconnected observations. The two owner screenshots inform layout patterns only, not account numbers or storage data.
+
+51 unit/security + 32 Chromium E2E PASS; lint/format/types/both builds, production boundary and HTTP checks PASS. Local screenshot evidence and detailed file/interaction inventory are in VISUAL_ANALYTICS_REVIEW.md. CR004/T006 remain IN_REVIEW, T007/T008 TODO; no real source connection or completed backend is claimed.

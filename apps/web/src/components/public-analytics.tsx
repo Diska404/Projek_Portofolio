@@ -5,6 +5,7 @@ import {
   type AnalyticsCard,
   type PublicAnalytics,
 } from "../../../../packages/contracts/src/public-analytics";
+import { ActivityCalendar } from "./evidence-charts";
 import { Icon } from "./icons";
 
 function Metric({ item }: { item: AnalyticsCard }) {
@@ -27,7 +28,13 @@ function Metric({ item }: { item: AnalyticsCard }) {
   );
 }
 
-export function PublicAnalyticsSection({ content }: { content: PublicAnalytics }) {
+export function PublicAnalyticsSection({
+  content,
+  calendarEnd,
+}: {
+  content: PublicAnalytics;
+  calendarEnd: string;
+}) {
   const [period, setPeriod] = useState(30);
   const [account, setAccount] = useState("all");
   const [languageBasis, setLanguageBasis] = useState("time");
@@ -70,31 +77,13 @@ export function PublicAnalyticsSection({ content }: { content: PublicAnalytics }
         ))}
       </div>
       <div className="analytics-panels">
-        <article className="analytics-panel cadence-panel">
-          <div className="analytics-panel-heading">
-            <span className="analytics-icon">
-              <Icon name="activity" size={18} />
-            </span>
-            <div>
-              <h3>{content.calendarTitle}</h3>
-              <span>{period} hari terakhir</span>
-            </div>
-            <span className="analytics-tag">Belum ada observasi</span>
-          </div>
-          <p>{content.calendarDescription}</p>
-          <div className="observation-empty">
-            <Icon name="chart" size={28} />
-            <strong>
-              {creator ? "Setiap publikasi, satu jejak." : "Setiap langkah, tercatat."}
-            </strong>
-            <span>
-              Grafik akan muncul setelah sumber terhubung dan cakupan periode terverifikasi.
-            </span>
-          </div>
-          <div className="analytics-legend">
-            <span className="unknown-marker" /> Belum diketahui <span>≠ tidak ada aktivitas</span>
-          </div>
-        </article>
+        <ActivityCalendar
+          title={content.calendarTitle}
+          endDate={calendarEnd}
+          days={period}
+          unit={creator ? "publikasi" : "kontribusi"}
+          description={content.calendarDescription}
+        />
         <article
           className="analytics-panel"
           aria-label={creator ? "Jenis publikasi" : "Penggunaan bahasa"}

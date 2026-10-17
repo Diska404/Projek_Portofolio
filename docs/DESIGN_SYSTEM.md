@@ -84,3 +84,8 @@ The full supplied video confirms the profile-sidebar/card/green-number direction
 ## Activity atlas extension (CR003A)
 
 Personal hierarchy: work process/AI before GitHub/coding; creator hierarchy: YouTube publications before community/game context. Segmented controls use native buttons with aria-pressed; select labels identify work period/project/source unambiguously. Unknown values remain em dashes; no synthetic graph or ranking becomes account history. Source labels distinguish automatic, owner-declared and pending capability. Work-source durations are not stacked without overlap correction. The separate local method simulator carries an explicit synthetic-data banner and does not persist input.
+
+
+## Calendar and composition family (CR004)
+
+Square activity cells use four relative green intensity levels, a distinct verified-zero fill and hatched unknown cells. Daily/cumulative calendars align Monday–Sunday; weekly mode uses bars. Each chart has date/unit/provenance, click/focus details, roving keyboard focus, a table and bounded internal scrolling. Composition colors (gold/purple/teal plus optional blue/coral/gray) identify exclusive categories; labels/values communicate meaning without color. Unknown data has no positive segment/percentage. The compact summary strip and source tiles are demonstrated only with explicitly marked synthetic values in the gated local visual lab.

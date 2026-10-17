@@ -4,6 +4,7 @@ import "../../../web/src/app/globals.css";
 import "../../../web/src/app/audience.css";
 import "../../../web/src/app/analytics.css";
 import "../../../web/src/app/activity-atlas.css";
+import "../../../web/src/app/evidence-charts.css";
 export const metadata: Metadata = {
   title: { default: "Raizei — Komunitas & karya · DevPulse", template: "%s · Raizei" },
   description:

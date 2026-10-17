@@ -61,7 +61,8 @@ test("creator publishing metrics and serialized page cannot select the other acc
   await expect(stats.locator(".activity-journal > p")).toContainText("Live · Belum ada sumber");
   for (const value of await stats.locator(".metric-value").allTextContents())
     expect(value).toBe("—");
-  await expect(stats.locator(".observation-empty")).toContainText("cakupan periode terverifikasi");
+  await expect(stats.locator('[data-chart="calendar"]')).toContainText("Belum terhubung");
+  expect(await stats.locator('.calendar-cell:not([data-value="unknown"])').count()).toBe(0);
   await page.goto("http://127.0.0.1:3101/");
   expect(await page.content()).not.toMatch(/Diska404|college-work|WakaTime|127\.0\.0\.1:3100/);
 });

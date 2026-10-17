@@ -63,6 +63,7 @@ try {
     "privacy",
     "design-system",
     "activity",
+    "visuals",
   ]) {
     assert.equal((await globalThis.fetch(base + "/preview/" + screen)).status, 404, screen);
   }

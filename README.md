@@ -84,3 +84,10 @@ Updates now use repository-local RaizeiID authorship/credentials; repository own
 Personal `http://127.0.0.1:3100/#journey` now prioritizes project work independently of GitHub publication, and provides AI learning/trial/application views for cloud or local evidence. Creator `http://127.0.0.1:3101/#journey` adds community work and a Steam library/playtime composition while preserving the RaizeiID-only/academic-exclusion policy. Owner selected automatic + manual tracking and permits daily summaries without conversation content or real-time presence.
 
 These views remain unconnected. `http://127.0.0.1:3100/preview/activity` is an explicitly synthetic interval-accounting simulation, not a saved journal or recorder. Normal production and the creator application cannot serve it. New accounting rules are regression-tested; latest local totals are 44 unit/security tests + 25 Chromium E2E, full check/build and both production smoke checks PASS. See docs/ACTIVITY_LEDGER_PLAN.md for the local AI source audit, file inventory and CR003B–F dependencies. Durable journal/provider/collector work follows remaining R0 database/auth and original release gates.
+
+
+## Visual analytics review (CR004)
+
+`http://127.0.0.1:3100/preview/visuals` demonstrates the requested screenshot patterns: yearly activity heatmap, daily/weekly/cumulative modes, compact KPI strip, segmented composition with selectable legend, source tiles, coverage gaps and table/keyboard alternatives. All numbers on this review-only page are explicitly synthetic. Public work/AI/GitHub/publication/game sections use unconnected/unknown views of the same components. Normal production and the creator app deny this review route.
+
+Current local verification: 51 unit/security tests + 32 Chromium E2E, full check/build, production boundary and HTTP smoke PASS. See docs/VISUAL_ANALYTICS_REVIEW.md for files, semantics, screenshots and checkpoint. CR004 remains IN_REVIEW with T006; database/auth/provider/collector prerequisites are unchanged.

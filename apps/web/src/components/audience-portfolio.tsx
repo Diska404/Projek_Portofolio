@@ -13,12 +13,14 @@ export function PublicPortfolio({
   profile,
   analytics,
   ledger,
+  calendarEnd,
   showReview,
   creatorUrl,
 }: {
   profile: PortfolioProfile;
   analytics: PublicAnalytics;
   ledger: LedgerPortfolio;
+  calendarEnd: string;
   showReview: boolean;
   creatorUrl?: string;
 }) {
@@ -226,9 +228,13 @@ export function PublicPortfolio({
               </div>
             </div>
           </section>
-          {!creator && <ActivityAtlas content={ledger} showReview={showReview} />}
-          <PublicAnalyticsSection content={analytics} />
-          {creator && <ActivityAtlas content={ledger} showReview={false} />}
+          {!creator && (
+            <ActivityAtlas content={ledger} showReview={showReview} calendarEnd={calendarEnd} />
+          )}
+          <PublicAnalyticsSection content={analytics} calendarEnd={calendarEnd} />
+          {creator && (
+            <ActivityAtlas content={ledger} showReview={false} calendarEnd={calendarEnd} />
+          )}
           <section className="audience-work" id="work">
             <div className="audience-section-heading">
               <div>

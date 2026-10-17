@@ -147,3 +147,14 @@ Implemented pure accounting contracts: revision idempotency/conflict exclusion/c
 Audited existing Local AI source without reading owner data or calling the side-effectful /api/usage endpoint. It distinguishes inference and loaded runtime, but its summary includes loaded-only models as used and exposes local paths/private metadata. Future outbound adapter must normalize and sanitize it instead of publishing its response. Existing local source/runtime/database remain unchanged.
 
 Checks: full check/build PASS; 44 unit/security tests PASS; 25 Chromium E2E PASS; both isolated production smoke checks PASS. New simulation is disabled in normal production and absent from creator routes. In-app visual evidence and full file inventory are in ACTIVITY_LEDGER_PLAN.md. Account identity/publication policy remains personal Diska404 + RaizeiID, creator RaizeiID/community-only. T006 remains IN_REVIEW; T007/T008 TODO; full R0/R1 NO-GO. Next: owner visual review, then the existing R0 database/auth tasks before durable journal/adapter implementation. CR003B–F dependencies are explicit in the plan.
+
+
+## CR004 — Visual analytics from owner screenshot references
+
+Date: 18 October 2026, Asia/Jakarta. Status: IMPLEMENTED / IN_REVIEW.
+
+Adapted the two requested patterns into the original dark/green UI: compact summary strip, daily heatmap, weekly bars, cumulative mode, segmented composition/legend, source tiles and date/unit/coverage insights. Screenshot identity/avatar/statistics/storage paths were not imported. Public activity/AI/GitHub/publication/game views use unknown projections; `/preview/visuals` alone provides clearly labeled synthetic examples and coverage controls. The review route is disabled in normal production and unavailable on creator routes.
+
+Added typed calendar/bucketing/summary/composition functions, single-tab-stop arrow/Home/End chart navigation, selected details, table alternatives and internal chart scrolling. Missing/partial days differ from verified zero; gaps invalidate later cumulative totals; unknown segments cannot form complete percentages; work source categories exclude overlap duplication. Added regressions for source/query privacy, unknown versus zero, date boundaries, retries/conflicts, weekly edges, cumulative gaps, source composition and responsive interactions.
+
+Final evidence: 51 unit/security tests, 32 Chromium E2E, full lint/format/types/both builds PASS; production boundary and HTTP smoke PASS. A weekly-render React key warning was reproduced with a console regression assertion and fixed; final interaction has no browser console/page errors. Screenshots and exact file inventory are in VISUAL_ANALYTICS_REVIEW.md. No dependency/provider/DB/auth/collector/ecosystem change. T006 remains IN_REVIEW, T007/T008 TODO and CR003B–F stay queued.
