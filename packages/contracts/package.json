@@ -1,0 +1,9 @@
+{
+  "name": "@devpulse/contracts",
+  "version": "0.1.0-r0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./fixtures": "./src/fixtures.ts"
+  }
+}

@@ -1,0 +1,87 @@
+# DevPulse implementation log
+
+Date: 17 October 2026 (Asia/Jakarta)
+
+## Audit / plan checkpoint
+
+Status: DONE for audit and plan; implementation tasks not yet validated.
+
+Read: 00 README, PRD, UI spec, architecture/data, feature specs, task board, agent guide, QA gates, complete CSV import, and five reference images.
+
+Files added: docs/planning/** (unchanged pack contents + source digest), docs/R0_IMPLEMENTATION_PLAN.md, this log.
+
+Checks: empty-target and no-Git inspection; Node/npm registry compatibility; all archive targets validated to remain under docs/planning. No application code existed or was overwritten.
+
+Issues: incomplete video frame coverage; no owner content/accounts/secrets. R0a is T001–T006; T007–T008 remain a subsequent gated checkpoint inside R0.
+
+Next: T001, then T002/T003 prerequisites. No deployment or production data integrations.
+
+## TASK T001 — Workspace and strict TypeScript
+
+Status: DONE locally.
+
+Changed: root package.json/package-lock.json; apps/web/package.json, tsconfig.json, next-env.d.ts, next.config.ts, src/app/layout.tsx; packages/ui/package.json; packages/contracts/package.json. Git initialized on main without a commit or remote. Next generated apps/web/AGENTS.md; its local documentation-reading rule was read and relevant bundled routing/CSS/testing/config guides consulted.
+
+Versions: Next 16.4.2, React/React DOM 19.3.1, TypeScript 5.9.3, Node 24.19.0, npm 11.17.0. Pinned compatible dependencies recorded in lockfile. Newer TypeScript 7 was deliberately not selected because the compatible lint parser declares TypeScript <6.1 support.
+
+Tests: installation PASS, loopback dev readiness PASS, strict typecheck PASS, optimized build PASS. The generated venv/dependencies of the neighboring application were not touched.
+
+Checkpoint: foundation starts at 127.0.0.1:3100; no backend account or database. Next task T002/T003.
+
+## TASK T002 — Conventions and QA foundation
+
+Status: IN_REVIEW (local checks pass; hosted CI and actual commit-hook execution pending).
+
+Changed: eslint.config.mjs, .prettierrc.json, .prettierignore, .github/workflows/ci.yml, .husky/pre-commit, .gitignore, .env.example, scripts/check-secrets.mjs, scripts/http-smoke.ts, scripts/production-smoke.mjs, tests/contracts.test.ts, tests/e2e/review.spec.ts, playwright.config.ts and npm scripts.
+
+The first lint preset pulled a high-severity transitive glob advisory. Direct ESLint 10.13.0 + typescript-eslint 8.71.2 + React Hooks 7.1.1 replaced it. npm's first in-place resolver could not reconcile the old tree; that generated tree was moved to ignored .r0-dependency-backup and a fresh install succeeded. No --force, advisory suppression, real secret, or existing application file was used/removed.
+
+Tests: lint PASS, format PASS, credential-pattern scan PASS (33 files), npm audit zero findings, typecheck/build PASS. Chromium test runtime installed from Playwright's official download for isolated automated QA. CI configuration includes checks, production boundary smoke and E2E, but no push/hosted run has occurred. Pre-commit hook configured, no commit created to fabricate hook evidence.
+
+Checkpoint: local QA commands are reproducible; remote/hook evidence remains open. Independent T003/T004 prerequisites are satisfied by T001.
+
+## TASK T003 — Tokens and dark/green theme
+
+Status: DONE locally; final visual signoff remains T006.
+
+Changed: packages/ui/tokens.css, apps/web/src/app/globals.css, docs/DESIGN_SYSTEM.md, components/icons.tsx and shared.tsx. Original pulse mark and code-native illustrations; no reference image embedded in product assets.
+
+Tests: text/accent/semantic token contrast at least 4.5:1 across three dark surfaces PASS; accent-ink pair PASS. Desktop/mobile/wide screenshots inspected. Reduced-motion CSS implemented; complete WCAG audit not claimed.
+
+Checkpoint: token source and typography/spacing/contrast decisions documented. Next T004/T005.
+
+## TASK T004 — Public and owner-review shells
+
+Status: DONE locally.
+
+Changed: components/public-portfolio.tsx, dashboard.tsx, shared.tsx, icons.tsx; src/app/page.tsx, preview/[screen]/page.tsx, dashboard/[[...path]]/page.tsx, api/owner/[[...path]]/route.ts, login/page.tsx, not-found.tsx, public/icon.svg and global CSS.
+
+Tests: public/workspace/design-system no page overflow at 390/768/1440/1920 PASS; dashboard drawer focus trap/Escape/focus return PASS; public disclosure Escape/focus return PASS; navigation and read-only sample filtering PASS. HTTP smoke verified seven supported methods deny owner access, spoofed identity cannot grant access, dashboard redirects, reference images are not served. Normal production preview routes return 404.
+
+Security: owner preview is explicitly separated from real /dashboard. No authentication/session is pretended; T008 remains TODO. Public composition is not a functional T009 CMS implementation.
+
+Checkpoint: shells reviewable locally. Next T005/T006.
+
+## TASK T005 — Component/data states
+
+Status: DONE locally.
+
+Changed: packages/contracts/src/index.ts and fixtures.ts; components/data-widgets.tsx, design-system section in dashboard.tsx; unit/E2E coverage.
+
+Tests: all nine state descriptions and interactive state selection PASS; null/unconfigured versus actual zero PASS; stale retention PASS; deterministic date coverage PASS; text/table alternatives present. Synthetic date filtering and explicit 30-day coverage for a 90-day request PASS.
+
+Security: fixtures are labeled sample and reside in review-only dashboard screens. Public stats remain unpublished. No provider calls, jobs, credentials, project writes or publication actions.
+
+Checkpoint: unit suite 10/10 and E2E suite 10/10 PASS. Next T006 visual review.
+
+## TASK T006 — Visual prototype and review handoff
+
+Status: IN_REVIEW, not DONE. Owner visual signoff pending.
+
+Changed: public/overview design composition, read-only integrations/projects/privacy studies, docs/evidence screenshots, docs/R0_REVIEW.md, docs/TASK_STATUS.csv, README.md, R0 plan and design system.
+
+Evidence: 12 responsive screenshots for portfolio/overview/design-system across four widths; manual in-app browser review; all recorded technical checks pass. Complete command and limitation table is in R0_REVIEW.md. Five supplied frames were inspected, but the pack lacks detailed Overview/WakaTime/GitHub screenshots; those follow the written UI specification and cannot be called pixel-matched to missing evidence.
+
+Remaining: owner review of identity direction, density, navigation, widget composition and language choice. No real owner profile/contact/project data was supplied. No hosted CI, deployment, real provider auth, DB, provider sync, full accessibility audit or production performance benchmark is claimed.
+
+Checkpoint: R0a READY FOR REVIEW; full R0/R1 NO-GO. After owner review, finish the remaining T002 evidence and proceed to T007 then T008. Do not start R1, R2 or R3 based solely on this prototype.

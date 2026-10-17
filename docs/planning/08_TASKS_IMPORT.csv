@@ -1,0 +1,50 @@
+﻿task_id,priority,title_and_deliverable,dependencies,acceptance,status
+T001,P0,Initialize monorepo and strict TypeScript,—,"Installs, dev server starts, typecheck passes",TODO
+T002,P0,"Repo conventions, lint/format/husky/CI",T001,CI runs lint/typecheck/test/build,TODO
+T003,P0,Define design tokens and dark green theme,T001,Consistent theme documented; contrast checked,TODO
+T004,P0,"Public navigation, owner dashboard sidebar/shell",T003,Responsive and accessible navigation,TODO
+T005,P0,"Card/chart skeleton, loading/error/empty components",T003,Storybook/demo with every required state,TODO
+T006,P0,Visual prototype Overview based on video,"T004,T005",Owner approval: layout/look resembles video,TODO
+T007,P0,"Initial database models, migrations, seeds for DEV only",T001,Recreate database from migration; no production fake data,TODO
+T008,P0,Auth provider setup and private route guards,T007,Visitor cannot access owner API/route,TODO
+T009,P0,"Public homepage, profile/CTA","T004,T007",Responsive home; content from DB,TODO
+T010,P0,Public project gallery and filters,"T007,T009",Approved projects only,TODO
+T011,P0,Project detail route and media cards,T010,Hidden projects return safe not-found,TODO
+T012,P0,Owner project CRUD + validation,"T007,T008",Create/edit/archive safely,TODO
+T013,P0,Milestone/task CRUD and weighted progress,T012,Unit tests for progress/edge cases,TODO
+T014,P0,Visibility controls for projects/media/milestones,"T012,T011",Revocation blocks public fetch,TODO
+T015,P0,Project activity timeline,T013,Source attribution; only approved public events,TODO
+T016,P0,"SEO metadata, robots, sitemap, a11y polish","T009,T011",Owner pages noindex; public metadata valid,TODO
+T017,P0,Metrics schema and units/timezone normalization,T007,Deterministic aggregation fixture tests,TODO
+T018,P0,Integration credential configuration with secret storage,T008,"Server-only secrets, revoke capability",TODO
+T019,P0,"Sync run status, job adapter, retry/error handling","T017,T018",Retries idempotent; no duplicate stats,TODO
+T020,P0,GitHub API adapter and contribution parser,T019,Fixture + provider contract test,TODO
+T021,P0,WakaTime API adapter and duration parser,T019,Fixture + normalized duration tests,TODO
+T022,P0,"Historical backfill, cursor, period coverage","T020,T021",No duplicate records on re-run,TODO
+T023,P0,Owner Overview KPI and source badges,"T006,T017,T022",Accurate source/timezone/status,TODO
+T024,P0,"Coding charts, languages breakdown, Github heatmap",T023,Keyboard summary; no dummy production data,TODO
+T025,P0,Public-approved metrics snapshots + revocation,"T014,T024",Owner-only data absent from public API,TODO
+T026,P0,"Source status, manual sync owner action","T019,T023",Authorized action; throttled; status visible,TODO
+T027,P0,"Security tests (401/403, IDOR, secret exposure)","T008,T025",All critical tests pass,TODO
+T028,P0,"Staging deployment, telemetry/logging, backup/restore","T025,T027",Deployed; rollback and restore documented,TODO
+T029,P0,Smoke/E2E/responsive review and MVP release,T028,R1 acceptance checklist signed,TODO
+T030,P1,Umami setup and server-side stats adapter,"T019,T029",Pageviews vs visitors labelled,TODO
+T031,P1,Monkeytype ApeKey and personal bests adapter,"T019,T029",Mode-specific WPM and accuracy,TODO
+T032,P1,Visitors dashboard and geographic/referrer filters,T030,"Privacy-friendly stats, graceful empty state",TODO
+T033,P1,Typing dashboard,T031,Modes visible; data source specified,TODO
+T034,P1,Preset layouts and widget registry,"T023,T029",Presets persist,TODO
+T035,P1,ECharts advanced plot types with guards,T034,Chart type matches data semantics,TODO
+T036,P1,Global and per-widget date/compare filters,T035,Valid only for available date coverage,TODO
+T037,P1,CSV reporting + audit metadata,T036,Exports source/unit/timezone/interval,TODO
+T038,P1,Accessibility/performance/SEO regression,T030–T037,No P0 regressions,TODO
+T039,P1,R2 release regression and documentation,T038,Versioned release notes and smoke tests,TODO
+T040,P2,Audit AI runtime telemetry capabilities,R2,Feasible fields & adapter contract documented,TODO
+T041,P2,Audit SignalDeck telemetry capabilities,R2,Supported data sources documented,TODO
+T042,P2,Local device registry and scoped ingest auth,"T018,T040",Rotatable/revocable device token,TODO
+T043,P2,Windows collector baseline + opt-in config,T042,Offline buffer; no inbound ports,TODO
+T044,P2,AI metrics adapter,"T040,T043",Token/s and runtime data only if supported,TODO
+T045,P2,SignalDeck adapter,"T041,T043",Sensor schema/time units verified,TODO
+T046,P2,Cloud aggregation and retention configuration,"T044,T045",Idempotent ingest; retention tests,TODO
+T047,P2,Private Local Systems dashboard,T046,Latest/stale/offline states accurate,TODO
+T048,P2,"P2 threat model, stress test, security review",T047,No remote OC/UV endpoints; no sensitive payload,TODO
+T049,P2,R3 release and operational guide,T048,Installation/uninstall/rollback documented,TODO

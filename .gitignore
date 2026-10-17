@@ -1,0 +1,11 @@
+node_modules/
+**/.next/
+*.tsbuildinfo
+.env*
+!.env.example
+test-results/
+playwright-report/
+docs/evidence/*.png
+*.log
+.r0-dependency-backup/
+.r0-package-lock.initial.json
