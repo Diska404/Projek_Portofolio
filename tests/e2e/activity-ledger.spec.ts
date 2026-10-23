@@ -5,7 +5,7 @@ test("personal work scope and AI experience keep unconnected observations honest
 }) => {
   await page.goto("/#journey");
   const atlas = page.locator("#journey");
-  await expect(atlas.locator(".atlas-project")).toHaveCount(3);
+  await expect(atlas.locator(".atlas-project")).toHaveCount(4);
   await atlas.getByLabel("Fokus proyek", { exact: true }).selectOption("gfl2-localization");
   await expect(atlas.locator(".atlas-project")).toHaveCount(1);
   await expect(atlas.locator(".atlas-project")).toContainText("GFL2 Bahasa Indonesia");

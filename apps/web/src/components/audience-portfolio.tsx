@@ -266,7 +266,18 @@ export function PublicPortfolio({
                       <span className="story-category">
                         {project.category.toUpperCase()} / {String(index + 1).padStart(2, "0")}
                       </span>
-                      {project.artwork === "notes" ? (
+                      {project.artwork === "neural" ? (
+                        <>
+                          <span className="story-neural">
+                            L<span>●</span>
+                          </span>
+                          <p>
+                            Suara. Konteks.
+                            <br />
+                            <b>Tindakan.</b>
+                          </p>
+                        </>
+                      ) : project.artwork === "notes" ? (
                         <>
                           <span className="story-glyph">
                             文<span>あ</span>
@@ -313,9 +324,15 @@ export function PublicPortfolio({
                           <span key={tag}>{tag}</span>
                         ))}
                       </div>
-                      <span className="content-pending">
-                        <Icon name="file" size={13} /> Detail belum dipublikasikan
-                      </span>
+                      {project.href ? (
+                        <Link href={project.href} className="content-pending project-detail-link">
+                          Jelajahi proyek & graf <Icon name="arrowRight" size={13} />
+                        </Link>
+                      ) : (
+                        <span className="content-pending">
+                          <Icon name="file" size={13} /> Detail belum dipublikasikan
+                        </span>
+                      )}
                     </div>
                   </article>
                 ))}

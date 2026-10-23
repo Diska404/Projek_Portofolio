@@ -5,7 +5,8 @@ export interface PortfolioProject {
   category: string;
   description: string;
   tags: string[];
-  artwork: "atlas" | "notes" | "orbit";
+  artwork: "atlas" | "notes" | "orbit" | "neural";
+  href?: string;
 }
 export interface PortfolioProfile {
   audience: PortfolioAudience;

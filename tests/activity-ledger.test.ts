@@ -266,5 +266,5 @@ test("creator ledger projection cannot serialize personal projects or identities
   const creator = ledgerContent("creator");
   assert.doesNotMatch(JSON.stringify(creator), /Diska404|college-work|Kampus|Profil pribadi|3100/);
   assert.ok(creator.projects.some((item) => item.id === "gfl2-localization"));
-  assert.equal(ledgerContent("personal").projects.length, 3);
+  assert.equal(ledgerContent("personal").projects.length, 4);
 });

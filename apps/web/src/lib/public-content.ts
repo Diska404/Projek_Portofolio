@@ -54,6 +54,16 @@ export function publicProfile(audience: PortfolioAudience): PortfolioProfile {
     projectIntro: "Setiap proyek, satu cerita.",
     projects: [
       {
+        id: "leva-assistant",
+        title: "Leva — Asisten AI pribadi",
+        category: "AI & Sistem",
+        description:
+          "Pengembangan asisten Windows dengan suara lokal, agent, memori, dan akses dari HP. Jelajahi arsitektur serta hubungan modul dari snapshot 0.28.0, berikut batas pengujiannya.",
+        tags: ["Python", "Agent", "ASR / TTS", "Web"],
+        artwork: "neural",
+        href: "/projects/leva",
+      },
+      {
         id: "college-work",
         title: "Proyek perkuliahan",
         category: "Kampus",

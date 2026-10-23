@@ -1,5 +1,7 @@
 # DevPulse Portfolio — R0 review
 
+The personal portfolio now includes [Leva project notes](docs/LEVA_PROJECT_UPDATE.md) at `http://127.0.0.1:3100/projects/leva`: an interactive module overview, the full architecture graph, and sanitized audit artifacts from development snapshot 0.28.0. The creator portfolio does not serve this project. Graph counts are static evidence, not usage analytics or a runtime acceptance claim.
+
 Two local public-portfolio prototypes with separate audiences: a personal portfolio (`apps/web`, port 3100) and a creator/community portfolio (`apps/creator`, port 3101). Shared original design components, separate server projections and routes. This continues the supplied planning pack plus the owner's CR001 request; no production database, provider integration, analytics tracker or local agent is connected.
 
 ## Run on Windows

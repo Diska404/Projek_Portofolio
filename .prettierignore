@@ -4,3 +4,5 @@ package-lock.json
 docs/planning
 test-results
 playwright-report
+# Generated graph snapshot: preserve byte-for-byte provenance hashes.
+apps/web/public/leva/**

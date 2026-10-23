@@ -1,0 +1,2 @@
+# Keep snapshot hashes stable on Windows checkouts and Linux CI.
+apps/web/public/leva/** text eol=lf

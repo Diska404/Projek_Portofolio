@@ -34,7 +34,7 @@ test("creator projection excludes college work and personal fields", () => {
     JSON.stringify(creator),
     /college-work|Proyek perkuliahan|Profil pribadi|personalUrl|legalName|avatarUrl/,
   );
-  assert.equal(publicProfile("personal").projects.length, 3);
+  assert.equal(publicProfile("personal").projects.length, 4);
   assert.ok(creator.projects.some((p) => p.id === "gfl2-localization"));
 });
 test("creator links only the explicitly approved GitHub identity", () => {
